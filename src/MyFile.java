@@ -8,7 +8,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Date;
-import java.util.List;
 
 /**
  *
@@ -72,7 +71,7 @@ public class MyFile {
 
             return true;
         } else {
-            System.out.println("Este archivo no se puede sobreescribir");
+            System.out.println("Este archivo no se puede sobreescribir o no existe");
             return false;
         }
 
@@ -89,7 +88,7 @@ public class MyFile {
 
             return true;
         } else {
-            System.out.println("Este archivo no se puede escribir");
+            System.out.println("Este archivo no se puede escribir o no existe");
             return false;
         }
     }
@@ -98,7 +97,8 @@ public class MyFile {
 
         StringBuilder cont = new StringBuilder();
 
-        try (FileReader archivo = new FileReader(mifile); BufferedReader lector2 = new BufferedReader(archivo)) {
+        try (FileReader archivo = new FileReader(mifile); 
+             BufferedReader lector2 = new BufferedReader(archivo)) {
 
             String linea;
             /*while ((linea = lector2.readLine()) != null) {
