@@ -31,10 +31,9 @@ public class FileTest {
             System.out.println("6 - Anadir algo al archivo");
             System.out.println("7 - Leer Archivo");
             System.out.println("8 - Borrar");
-            System.out.println("9 - DIR");
+            System.out.println("9 -  DIR");
             System.out.println("10 - ARBOL");
             System.out.println("11 -  Salir");
-            System.out.println("12 - Ver Archivo");
             System.out.println("---------------------------------------");
 
             System.out.println("\nIngrese una opcion");

@@ -63,7 +63,8 @@ public class MyFile {
     public boolean reescribir(File dir, String contenido) throws IOException {
 
         if (dir.canWrite()) {
-            try (FileWriter creador = new FileWriter(dir); PrintWriter escritor = new PrintWriter(creador)) {
+            try (FileWriter creador = new FileWriter(dir); 
+                PrintWriter escritor = new PrintWriter(creador)) {
                 escritor.println(contenido);
             } catch (IOException e) {
                 System.out.println("Error: " + e.getMessage());
@@ -114,6 +115,21 @@ public class MyFile {
 
         return cont.toString();
 
+    }
+    
+    public String leer2() {
+        StringBuilder cont = new StringBuilder();
+
+        try (FileReader archivo = new FileReader(mifile)) {
+            int caracter;
+            while ((caracter = archivo.read()) != -1) { 
+                cont.append((char) caracter); 
+            }
+        } catch (IOException e) {
+            System.out.println("No se pudo leer");
+        }
+
+        return cont.toString();
     }
 
    
